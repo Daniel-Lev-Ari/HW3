@@ -1,0 +1,7 @@
+C:\Users\danie\OneDrive\שולחן העבודה\SolHW3\q1\bin\Debug\q1.exe.config
+C:\Users\danie\OneDrive\שולחן העבודה\SolHW3\q1\bin\Debug\q1.exe
+C:\Users\danie\OneDrive\שולחן העבודה\SolHW3\q1\bin\Debug\q1.pdb
+C:\Users\danie\OneDrive\שולחן העבודה\SolHW3\q1\obj\Debug\q1.csprojAssemblyReference.cache
+C:\Users\danie\OneDrive\שולחן העבודה\SolHW3\q1\obj\Debug\q1.csproj.CoreCompileInputs.cache
+C:\Users\danie\OneDrive\שולחן העבודה\SolHW3\q1\obj\Debug\q1.exe
+C:\Users\danie\OneDrive\שולחן העבודה\SolHW3\q1\obj\Debug\q1.pdb
