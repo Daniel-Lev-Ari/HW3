@@ -8,8 +8,9 @@ namespace q1
 {
     class Trip
     {
+
         static int counter = 0;
-        TripType typetrip;
+        TypeTrip typetrip;
         static uint TripNum = 0;
         string destination;
         DateTime date;
@@ -50,7 +51,7 @@ namespace q1
                 return 0;
             }
         }
-        public Trip(string destination, DateTime date, TripType t)
+        public Trip(string destination, DateTime date, TypeTrip t)
         {
             counter++;
             TripNum++;
@@ -65,7 +66,7 @@ namespace q1
             TripNum++;
             destination = "Israel";
             date = DateTime.Now;
-            Typetrip = TripType.Holiday;
+            Typetrip = TypeTrip.Holiday;
         }
         
         public DateTime Date 
@@ -84,7 +85,7 @@ namespace q1
             }
         }
 
-        public TripType Typetrip
+        public TypeTrip Typetrip
         {
             get => typetrip;
             set => typetrip = value;

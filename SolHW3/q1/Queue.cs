@@ -9,12 +9,12 @@ namespace q1
     class Queue
     {
         Trip[] trips;
-        int index = 0;
-
+        int index;
+        
         public Queue()
         {
             trips = new Trip[1];
-            index++;
+            index=0;
         }
 
         public bool IsEmpty()
@@ -24,18 +24,30 @@ namespace q1
         public void Enqueue(Trip t)
         {
             bool flag = false;
-            for (int i = 0; i < this.trips.Length; i++)
-            {
-                if (this.trips[i].CompareDate(t) == 0 && this.trips[i].Typetrip == t.Typetrip)
+            Trip[] temp = trips;
+                for (int i = 0; i < this.trips.Length; i++)
                 {
-                    Console.WriteLine("There's already a trip which occurs on that date and has the same type of trip");
-                    flag = true;
+                  if (this.trips[i] == null)
+                  {
                     break;
+                  }
+                  else if (this.trips[i].CompareDate(t) == 0 && this.trips[i].Typetrip == t.Typetrip)
+                  {
+                        Console.WriteLine("There's already a trip which occurs on that date and has the same type of trip");
+                        flag = true;
+                        break;
+                  }
+                  
+                  
                 }
-            }
+              
+            
             if (flag == false)
             {
-                trips[index++] = t;
+                trips = new Trip[this.index+1];
+                temp.CopyTo(trips,0);
+                trips[this.index++] = t;
+                
             }
         }
 
@@ -77,7 +89,7 @@ namespace q1
             return index;
         }
 
-        public Trip[] SearchTripByType(TripType t)
+        public Trip[] SearchTripByType(TypeTrip t)
         {          
             
             Trip[] temp = new Trip[this.index + 1];
@@ -87,7 +99,11 @@ namespace q1
                 for (int i=0; i <trips.Length; i++)
                 {
                     temp[i] = Dequeue();
-                    if (temp[i].Typetrip==t)
+                    if (temp[i] == null)
+                    {
+                        return null;
+                    }
+                    else if (temp[i].Typetrip==t)
                     {
                         counter++;
                     }
@@ -118,16 +134,24 @@ namespace q1
 
         public void PrintQueue()
         {
-            foreach (Trip item in trips)
+            if (!IsEmpty())
             {
-                item.PrintTrip();
+                foreach (Trip item in trips)
+                {
+                    item.PrintTrip();
+                }
             }
+            else
+            {
+                Console.WriteLine("The queue is Empty!");
+            }
+          
         }
 
         public void deleteTrip(int tripnum)
         {
             int index=0;
-            Trip[] temp = new Trip();
+            Trip[] temp=new Trip[0];
             for (int i = 0; i < this.trips.Length; i++)
             {
                 temp[i] = Dequeue();

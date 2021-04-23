@@ -12,6 +12,7 @@ namespace q1
         {
             TimeSpan difference = d1.Date - d2.Date;
             int days = (int)difference.TotalDays;
+            Console.WriteLine($"DateDif return num of days: {days}");
             return days;
         }
         public static DateTime AddDayToDate(DateTime d,uint days)
